@@ -1,0 +1,12 @@
+ORIG_PN="postgresql-ocaml"
+inherit ocaml
+
+DESCRIPTION="OCaml PostgreSQL bindings"
+HOMEPAGE="http://www.ocaml.info/home/ocaml_sources.html"
+SRC_URI="http://www.ocaml.info/ocaml_sources/${ORIG_PN}-${PV}.tar.bz2"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake
+}
