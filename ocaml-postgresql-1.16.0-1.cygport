@@ -1,9 +1,9 @@
-ORIG_PN="postgresql-ocaml"
 inherit ocaml
 
 DESCRIPTION="OCaml PostgreSQL bindings"
 HOMEPAGE="http://www.ocaml.info/home/ocaml_sources.html"
-SRC_URI="http://www.ocaml.info/ocaml_sources/${ORIG_PN}-${PV}.tar.bz2"
+SRC_URI="http://hg.ocaml.info/release/postgresql-ocaml/archive/release-${PV}.tar.bz2"
+SRC_DIR="postgresql-ocaml-release-${PV}"
 
 src_compile() {
 	lndirs
