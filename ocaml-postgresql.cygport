@@ -1,7 +1,7 @@
 inherit ocaml
 
 NAME="ocaml-postgresql"
-VERSION=1.16.0
+VERSION=2.0.4
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="OCaml PostreSQL bindings"
@@ -10,9 +10,13 @@ efficient and reliable, open source, relational database. Almost all
 functionality available through the C-API (libpq) is replicated in a type-safe
 way. This library uses objects for representing database connections and
 results of queries."
-HOMEPAGE="http://www.ocaml.info/home/ocaml_sources.html"
-SRC_URI="http://hg.ocaml.info/release/postgresql-ocaml/archive/release-${VERSION}.tar.bz2"
-SRC_DIR="postgresql-ocaml-release-${VERSION}"
+REQUIRES="libpq-devel"
+HOMEPAGE="http://www.ocaml.info/software.html"
+SRC_URI="https://bitbucket.org/mmottl/postgresql-ocaml/downloads/postgresql-ocaml-${VERSION}.tar.gz"
+SRC_DIR="postgresql-ocaml-${VERSION}"
+if defined ARCH_x86_64; then
+PATCH_URI="2.0.4-static.patch"
+fi
 
 src_compile() {
 	lndirs
